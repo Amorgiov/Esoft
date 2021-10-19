@@ -1,0 +1,29 @@
+﻿<Page x:Class="Esoft.Pages.ThePropertyPages.UpdateThePropertyPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Esoft.Pages.ThePropertyPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="365" d:DesignWidth="625"
+      Title="UpdateThePropertyPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="315"/>
+        </Grid.RowDefinitions>
+        <ComboBox Height="25" Width="200" SelectionChanged="ComboBox_SelectionChanged" Name="CBObjects">
+            <ComboBoxItem>
+                <TextBlock Text="Список домов" Name="HouseList"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="Список квартир" Name="ApartList"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="Список земельных участков" Name="PlotList"/>
+            </ComboBoxItem>
+        </ComboBox>
+        <Frame Name="ListFrame" Grid.Row="1"/>
+    </Grid>
+</Page>

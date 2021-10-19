@@ -1,0 +1,33 @@
+﻿<Page x:Class="Esoft.Pages.RealtorPages.CreateRealtorPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Esoft.Pages.RealtorPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="365" d:DesignWidth="625"
+      Title="CreateRealtorPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0">
+            <Label Content="Фамилия"/>
+            <Label Content="Имя"/>
+            <Label Content="Отчество"/>
+            <Label Content="Доля"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1">
+            <TextBox Text ="{Binding SurName}" Name="Fam" Margin="4"></TextBox>
+            <TextBox Text ="{Binding Name}" Name="Name" Margin="4"></TextBox>
+            <TextBox Text ="{Binding Patronymic}" Name="Otch" Margin="4"></TextBox>
+            <TextBox Text ="{Binding Share}" Name="Share" Margin="4"></TextBox>
+            <Button Click="AddClient" Content="Добавить"/>
+            <Button Click="UpdateClient" Content="Сохранить"/>
+        </StackPanel>
+    </Grid>
+</Page>

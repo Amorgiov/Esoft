@@ -1,0 +1,47 @@
+﻿<Page x:Class="Esoft.Pages.ThePropertyPages.Objects.Apartment.AddApartPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Esoft.Pages.ThePropertyPages.Objects.Apartment"
+      mc:Ignorable="d" 
+      d:DesignHeight="324" d:DesignWidth="625"
+      Title="AddApartPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.Column="0">
+            <ComboBox Name="CBAddress" Margin="10" Height="25"  DisplayMemberPath="City" SelectionChanged="CBAddress_SelectionChanged"/>
+            <Button Name="BtnAddressAdd" Content="Добавить адрес" Margin="50px" Click="BtnAddressAdd_Click"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.Row="0">
+            <ComboBox Name="CBCoord" Margin="10" Height="25" DisplayMemberPath="Longitude" SelectionChanged="CBCoord_SelectionChanged"/>
+            <Button Name="BtnCoordAdd" Content="Добавить координаты" Margin="50px" Click="BtnCoordAdd_Click"/>
+        </StackPanel>
+
+        <StackPanel Margin="10" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right">
+            <Label Content="Номер квартиры"/>
+            <Label Content="Количество комнат"/>
+            <Label Content="Площадь"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Margin="10" Grid.Row="1" HorizontalAlignment="Left">
+            <TextBox Name="floor" Width="200" Margin="5"/>
+            <TextBox Name="roomCount" Width="200" Margin="5"/>
+            <TextBox Name="square" Width="200" Margin="5"/>
+        </StackPanel>
+
+        <Button HorizontalAlignment="Center" Grid.Row="3" Content="Добавить" Grid.ColumnSpan="2" Name="BtnAdd" Click="BtnAdd_Click"/>
+    </Grid>
+</Page>

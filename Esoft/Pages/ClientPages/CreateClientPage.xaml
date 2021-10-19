@@ -1,0 +1,35 @@
+﻿<Page x:Class="Esoft.Pages.ClientPages.CreateClientPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Esoft.Pages.ClientPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="365" d:DesignWidth="625"
+      Title="CreateClientPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0">
+            <Label Content="Фамилия"/>
+            <Label Content="Имя"/>
+            <Label Content="Отчество"/>
+            <Label Content="Телефон"/>
+            <Label Content="Почта"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1">
+            <TextBox Text ="{Binding SurName}" Name="Fam" Margin="3"></TextBox>
+            <TextBox Text ="{Binding Name}" Name="Name" Margin="3"></TextBox>
+            <TextBox Text ="{Binding Patronymic}" Name="Otch" Margin="3"></TextBox>
+            <TextBox Text ="{Binding PhoneNumber}" Name="Phone" Margin="3"></TextBox>
+            <TextBox Text ="{Binding Email}" Name="Eml" Margin="3"></TextBox>
+            <Button Click="AddClient" Content="Добавить"/>
+            <Button Click="UpdateClient" Content="Сохранить"/>
+        </StackPanel>
+    </Grid>
+</Page>

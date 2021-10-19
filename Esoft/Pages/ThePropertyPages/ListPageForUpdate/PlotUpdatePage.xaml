@@ -1,0 +1,38 @@
+﻿<Page x:Class="Esoft.Pages.ThePropertyPages.ListPageForUpdate.PlotUpdatePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Esoft.Pages.ThePropertyPages.ListPageForUpdate"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="350"
+      Title="PlotUpdatePage">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <DataGrid Name="DGPlot" AutoGenerateColumns="False" Focusable="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="25"/>
+                <DataGridTextColumn Header="AdressId" Binding="{Binding AddressId}" Width="60"/>
+                <DataGridTextColumn Header="CoordId" Binding="{Binding CoordId}" Width="60"/>
+                <DataGridTextColumn Header="Square" Binding="{Binding Square}" Width="60"/>
+                <DataGridTextColumn Header="Статус" Binding="{Binding State}" Width="*"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btnUpdate" Content="Обновить" Click="btnUpdate_Click"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Grid.Row="2" Name="BtnDelete" Click="BtnDelete_Click" Content="Удалить" Margin="0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Page>

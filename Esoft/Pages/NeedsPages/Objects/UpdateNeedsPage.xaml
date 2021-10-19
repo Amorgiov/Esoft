@@ -1,0 +1,41 @@
+﻿<Page x:Class="Esoft.Pages.NeedsPages.Objects.UpdateNeedsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Esoft.Pages.NeedsPages.Objects"
+      mc:Ignorable="d" 
+      d:DesignHeight="365" d:DesignWidth="625"
+      Title="UpdateNeedsPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <DataGrid Name="DgridSent" Grid.RowSpan="2" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="20"/>
+                <DataGridTextColumn Header="Клиент" Binding="{Binding ClientId}" Width="50"/>
+                <DataGridTextColumn Header="Реелтор" Binding="{Binding RealtorId}" Width="55"/>
+                <DataGridTextColumn Header="Недвиж." Binding="{Binding TypeOfProperty}" Width="55"/>
+                <DataGridTextColumn Header="Мин.Цена" Binding="{Binding MinPrice}" Width="70"/>
+                <DataGridTextColumn Header="Макс.Цена" Binding="{Binding MaxPrice}" Width="70"/>
+                <DataGridTextColumn Header="Мин.Этаж" Binding="{Binding MinCountFloor}" Width="70"/>
+                <DataGridTextColumn Header="Макс.Этаж" Binding="{Binding MaxCountFloor}" Width="70"/>
+                <DataGridTextColumn Header="Мин.Кол-во комнат" Binding="{Binding MinCountRoom}" Width="70"/>
+                <DataGridTextColumn Header="Макс.Кол-во комнат" Binding="{Binding MaxCountRoom}" Width="70"/>
+                <DataGridTextColumn Header="Мин.Площадь" Binding="{Binding MinSquare}" Width="70"/>
+                <DataGridTextColumn Header="Макс.Площадь" Binding="{Binding MaxSquare}" Width="70"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btnUpdate" Content="Обновить" Click="btnUpdate_Click" Width="120"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Grid.Row="1" Content="Удалить" Click="Button_Click"/>
+    </Grid>
+</Page>

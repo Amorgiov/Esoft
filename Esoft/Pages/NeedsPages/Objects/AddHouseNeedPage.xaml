@@ -1,0 +1,71 @@
+﻿<Page x:Class="Esoft.Pages.NeedsPages.Objects.AddHouseNeedPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="365" d:DesignWidth="625"
+      Title="AddHouseNeedPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="180"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Column="0" Grid.RowSpan="2">
+            <Label Content="Клиент"/>
+            <Label Content="Реелтор"/>
+            <Label Content="Адрес"/>
+            <Label Content="Объект недвижимости(дом/квартира/земля)"/>
+            <Label Content="Цена(мин|макс)"/>
+            <Label Content="Площадь(мин|макс)"/>
+            <Label Content="Колличество этажей(мин|макс)"/>
+            <Label Content="Количчество комнат(мин|макс)"/>
+        </StackPanel>
+
+        <StackPanel Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Column="1">
+            <ComboBox Margin="2" Name="CBClient" DisplayMemberPath="SurName" SelectionChanged="CBClient_SelectionChanged"/>
+            <ComboBox Margin="2" Name="CBRealtor" DisplayMemberPath="SurName" SelectionChanged="CBRealtor_SelectionChanged"/>
+            <ComboBox Margin="2" Name="CBAdress" DisplayMemberPath="City" SelectionChanged="CBAdress_SelectionChanged"/>
+            
+            <ComboBox Margin="2" Name="CBProperty" SelectionChanged="CBProperty_SelectionChanged">
+                <ComboBoxItem>
+                    <TextBlock Text="Дом"/>
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <TextBlock Text="Квартира"/>
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <TextBlock Text="Земля"/>
+                </ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="1" Width="100" HorizontalAlignment="Right">
+            <TextBox Name="minPrice" Margin="4" Text="{Binding MinPrice}"/>
+            <TextBox Name="minSquare" Margin="4" Text="{Binding MinSquare}"/>
+            <TextBox Name="minCountFloor" Margin="4" Text="{Binding MinCountFloor}"/>
+            <TextBox Name="minCountRoom" Margin="4" Text="{Binding MinCountRoom}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="2" Width="100" HorizontalAlignment="Left">
+            <TextBox Name="maxPrice" Margin="4" Text="{Binding MaxPrice}"/>
+            <TextBox Name="maxSquare" Margin="4" Text="{Binding MaxSquare}"/>
+            <TextBox Name="maxCountFloor" Margin="4" Text="{Binding MaxCountFloor}"/>
+            <TextBox Name="maxCountRoom" Margin="4" Text="{Binding MaxCountRoom}"/>
+        </StackPanel>
+
+        <StackPanel Grid.ColumnSpan="2" Grid.Row="2" HorizontalAlignment="Right" Orientation="Horizontal">
+            <Button Content="Создать" VerticalAlignment="Center" Name="BtnCreateSentence" Click="BtnCreateSentence_Click"/>
+            <Button Content="Сохранить" VerticalAlignment="Center" Name="BtnUpdateSentence" Click="BtnUpdateSentence_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>
